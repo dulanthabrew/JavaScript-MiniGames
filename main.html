@@ -22,7 +22,7 @@
         <div class="bar11"></div>
         <div class="bar12"></div>
     </div>
-    <h1 class="main-title">Hello Welcome !!! please enter your name below</h1>
+    <h1 class="main-title">Welcome !!! please enter your name below</h1>
     <div class="main-div">
         <div class="form-container">
             <form class="form" onsubmit="handleSubmit(event)">
@@ -46,7 +46,9 @@
             event.preventDefault(); // Prevent the default form submission
             const name = document.getElementById('name').value;
             if (name) {
-                window.location.href = 'index.html'; // Replace 'newpage.html' with the path to your new page
+                // Store the name in sessionStorage to pass to index.html
+                sessionStorage.setItem('userName', name);
+                window.location.href = 'index.html'; // Redirect to index.html
             } else {
                 alert('Please enter your name.');
             }
